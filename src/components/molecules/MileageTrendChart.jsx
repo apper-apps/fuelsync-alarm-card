@@ -1,10 +1,10 @@
-import { useMemo } from 'react';
-import Chart from 'react-apexcharts';
-import { format, parseISO, startOfWeek, endOfWeek } from 'date-fns';
-import { Card } from '@/components/atoms/Card';
-import ApperIcon from '@/components/ApperIcon';
+import React, { useMemo } from "react";
+import Chart from "react-apexcharts";
+import { endOfWeek, format, parseISO, startOfWeek } from "date-fns";
+import ApperIcon from "@/components/ApperIcon";
+import Card from "@/components/atoms/Card";
 
-const MileageTrendChart = ({ entries }) => {
+export default function MileageTrendChart({ entries }) {
   const chartData = useMemo(() => {
     if (!entries || entries.length === 0) {
       return {
@@ -206,5 +206,3 @@ const MileageTrendChart = ({ entries }) => {
     </Card>
   );
 };
-
-export default MileageTrendChart;
