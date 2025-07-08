@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 import StatCard from "@/components/molecules/StatCard";
 import FuelGauge from "@/components/molecules/FuelGauge";
-
+import MileageTrendChart from "@/components/molecules/MileageTrendChart";
 const Dashboard = ({ entries }) => {
   const stats = useMemo(() => {
     if (!entries || entries.length === 0) {
@@ -53,6 +53,8 @@ const Dashboard = ({ entries }) => {
           mileage={stats.averageMileage}
         />
       </div>
+{/* Mileage Trend Chart */}
+      <MileageTrendChart entries={entries} />
 
       {/* Stats Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
